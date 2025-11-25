@@ -31,4 +31,6 @@ INSERT INTO mendezPharmacy VALUES (13, "Gabapentin 300mg", 2, 100, 15);
 INSERT INTO mendezPharmacy VALUES (14, "Cyclobenzaprine 10mg", 6, 500, 20);
 INSERT INTO mendezPharmacy VALUES (15, "Metformin 1000mg", 11, 100, 2);
 
-SELECT * FROM mendezPharmacy ORDER BY Price_in_dollars;
+
+SELECT name, Price_in_dollars, SUM(quantity) AS total_quantity FROM mendezPharmacy ORDER BY Price_in_dollars;
+
