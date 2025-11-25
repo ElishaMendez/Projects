@@ -2,3 +2,33 @@ Khan academy - Project: Design a store database
 Create your own store! Your store should sell one type of things, like clothing or bikes, whatever you want your store to specialize in. 
 You should have a table for all the items in your store, and at least 5 columns for the kind of data you think you'd need to store. 
 You should sell at least 15 items, and use select statements to order your items by price and show at least one statistic about the items.
+
+
+SQL code:
+/*
+Pharmacy store
+-make a table
+-5 columns for the kind of data
+-15 items in your store
+-order them price, and show one statistic
+*/
+
+CREATE Table mendezPharmacy (id INTEGER Primary key, name TEXT, Quantity INTEGER, Package_Size INTEGER, Price_in_dollars INTEGER);
+
+INSERT INTO mendezPharmacy VALUES (1, "Atorvastatin 5mg", 1, 30, 4 );
+INSERT INTO mendezPharmacy VALUES (2, "Atorvastatin 5mg", 3, 60, 8);
+INSERT INTO mendezPharmacy VALUES (3, "Atorvastatin 5mg", 5, 90, 10);
+INSERT INTO mendezPharmacy VALUES (4, "Atorvastatin 10mg", 9, 30, 4);
+INSERT INTO mendezPharmacy VALUES (5, "Atorvastatin 10mg", 2, 60, 8);
+INSERT INTO mendezPharmacy VALUES (6, "Atorvastatin 10mg", 8, 90, 10);
+INSERT INTO mendezPharmacy VALUES (7, "Ibuprofen 800mg", 5, 90, 6);
+INSERT INTO mendezPharmacy VALUES (8, "Lisinopril 10mg", 0, 100, 5);
+INSERT INTO mendezPharmacy VALUES (9, "Lisinopril 100mg", 0, 90, 5);
+INSERT INTO mendezPharmacy VALUES (10, "Glipizide 10mg", 13, 100, 9);
+INSERT INTO mendezPharmacy VALUES (11, "Tamsulosin HCL 0.4mg", 5, 90, 9);
+INSERT INTO mendezPharmacy VALUES (12, "Ceterizine 10mg", 20, 90, 1);
+INSERT INTO mendezPharmacy VALUES (13, "Gabapentin 300mg", 2, 100, 15);
+INSERT INTO mendezPharmacy VALUES (14, "Cyclobenzaprine 10mg", 6, 500, 20);
+INSERT INTO mendezPharmacy VALUES (15, "Metformin 1000mg", 11, 100, 2);
+
+SELECT * FROM mendezPharmacy ORDER BY Price_in_dollars;
