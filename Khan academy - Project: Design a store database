@@ -1,3 +1,21 @@
+## Project: Design a store database
+- For this project, I designed a small pharmacy store database using the SQL lessons I learned from Khan Academy. The goal was to practice creating tables, 
+inserting real-world medication data, and running queries that organize and summarize inventory information. This helped me apply what I learned in a practical way and build a basic system that could track stock levels, pricing, and product availability.
+
+## Technologies
+- SQL
+
+## Features
+- A pharmacy inventory table with five columns: ID, drug name, quantity, package size, and price.
+- 15 medication entries representing different strengths and stock levels.
+- Ability to sort products by price to quickly identify the most affordable or expensive items.
+- A statistical query using SUM() to calculate total quantities and group similar medications.
+
+## What I learned
+- I learned how to structure a functional SQL table and load it with real-world pharmacy data. I also practiced grouping and summarizing data using aggregate functions. More importantly, I learned how ordering and filtering can turn a simple dataset into something that actually supports decision-making in an operational environment.
+
+## How it can be Improved
+
 Khan academy - Project: Design a store database
 Create your own store! Your store should sell one type of things, like clothing or bikes, whatever you want your store to specialize in. 
 You should have a table for all the items in your store, and at least 5 columns for the kind of data you think you'd need to store. 
