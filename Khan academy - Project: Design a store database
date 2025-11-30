@@ -1,24 +1,26 @@
-## Project: Design a store database
-- For this project, using SQL I created a Pharmacy Inventory Database with Summary Statistic. The goal was to practice creating tables, 
-inserting real-world medication data, and running queries that organize and summarize inventory information. This helped me apply what
-I learned in a practical way and build a basic system that could track stock levels, pricing, and product availability.
-
-SQL code:
+Pharmacy Inventory Database (SQL)
+For this project, I designed a pharmacy inventory database to practice creating tables, inserting realistic medication data, and running analytical queries. 
+The goal was to simulate how a small pharmacy might track its stock levels, pricing, and product availability. This project helped me apply SQL concepts in a more practical, real-world way.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 /*
-Pharmacy store
--make a table
--5 columns for the kind of data
--15 items in your store
--order them price, and show one statistic
+Pharmacy store project requirements:
+- Create a table
+- Include at least 5 columns
+- Insert at least 15 items
+- Order items by price
+- Show at least one statistic
 */
 
-CREATE Table mendezPharmacy (
-id INTEGER Primary key, 
-name TEXT, 
-Quantity INTEGER, 
-Package_Size INTEGER, 
-Price_in_dollars INTEGER);
+-- Create the pharmacy inventory table
+CREATE TABLE mendezPharmacy (
+    id INTEGER PRIMARY KEY,     -- Unique ID for each item
+    name TEXT,                  -- Medication name
+    Quantity INTEGER,           -- Number of packages in stock
+    Package_Size INTEGER,       -- Tablets/capsules per package
+    Price_in_dollars INTEGER    -- Package price
+);
 
+-- Insert 15 medication entries
 INSERT INTO mendezPharmacy VALUES (1, "Atorvastatin 5mg", 1, 30, 4 );
 INSERT INTO mendezPharmacy VALUES (2, "Atorvastatin 5mg", 3, 60, 8);
 INSERT INTO mendezPharmacy VALUES (3, "Atorvastatin 5mg", 5, 90, 10);
@@ -35,32 +37,44 @@ INSERT INTO mendezPharmacy VALUES (13, "Gabapentin 300mg", 2, 100, 15);
 INSERT INTO mendezPharmacy VALUES (14, "Cyclobenzaprine 10mg", 6, 500, 20);
 INSERT INTO mendezPharmacy VALUES (15, "Metformin 1000mg", 11, 100, 2);
 
-/* This query groups medications by name and price, then uses a aggregate function to calculate the total quantity available for each drug. It gives a quick inventory summary
-showing how much stock we have for every medication at each price point, ordered from the lowest price to highest.
+-- Summary statistic query
+-- Groups meds by name & price, then sums the quantity to show total stock.  
+-- This helps quickly see how much inventory exists at each price point.
+SELECT 
+    name, 
+    Price_in_dollars, 
+    SUM(quantity) AS total_quantity
+FROM mendezPharmacy
+GROUP BY name, Price_in_dollars
+ORDER BY Price_in_dollars;
 
-SELECT name, Price_in_dollars, SUM(quantity) AS total_quantity FROM mendezPharmacy ORDER BY Price_in_dollars;
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## Original Assignment
+Create a store database with:
+At least one table
+At least five columns
+At least 15 items
+A query that orders items by price
+A query that calculates at least one statistic
 
-## Technologies
-- SQL
+Technologies Used
+SQL
 
 ## Features
-- A pharmacy inventory table with five columns: ID, drug name, quantity, package size, and price.
-- 15 medication entries representing different strengths and stock levels.
-- Ability to sort products by price to quickly identify the most affordable or expensive items.
-- A statistical query using SUM() to calculate total quantities and group similar medications.
+-- Fully structured pharmacy inventory table with 5 meaningful columns.
+-- Dataset of 15 medications with real-world drug names and stock levels.
+-- Sorting by price to identify the cheapest or most expensive medications.
+-- Summary query using SUM() to reveal total inventory per medication.
 
-## What I learned
-- I learned how to structure a functional SQL table and load it with real-world pharmacy data. I also practiced grouping and summarizing 
-data using aggregate functions. More importantly, I learned how ordering and filtering can turn a simple dataset into something that 
-actually supports decision-making in an operational environment.
+## What I Learned
+-- I learned how to design a functional SQL table and populate it with realistic data. I also practiced using grouping and aggregate functions to analyze inventory. 
+-- The biggest takeaway was understanding how ordering and summarizing data can support real operational decisions, like stocking, pricing, and supply tracking.
 
-## How it can be Improved
-Add another column for last_date_purchased and auto increment the ID
+## How It Can Be Improved
+-- Add a last_date_purchased column for tracking recent activity.
+-- Auto-increment the id field to remove manual numbering.
+-- Add a category or manufacturer column for more detailed analytics.
 
-Khan academy - Project: Design a store database
-Create your own store! Your store should sell one type of things, like clothing or bikes, whatever you want your store to specialize in. 
-You should have a table for all the items in your store, and at least 5 columns for the kind of data you think you'd need to store. 
-You should sell at least 15 items, and use select statements to order your items by price and show at least one statistic about the items.
 
 
 
