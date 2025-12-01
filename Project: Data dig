@@ -1,21 +1,33 @@
 /* Source:
   https://www.kaggle.com/nasa/astronaut-yearbook
 */
+Technologies Used
+SQL
+
+## Features
+
+
+## What I Learned
+
+
+## How It Can Be Improved
+
 
 SQL Code
-/*What are average, max, and min values in the data?*/
+--- What are average, max, and min values in the data?---
 select
 round(Avg(Space_Flight_hr)) as Average_hrs,
 max(Space_Flight_hr) as Max_hrs, 
 min(Space_Flight_hr) as Min_hrs
 from astronauts;
 
-/*What about those numbers per category in the data (using HAVIN)?*/
+--- What about those numbers per category in the data (using HAVIN)?---
 select * from astronauts
 group by name
 having avg(Space_Flight_hr) <= 100
 order by Space_Flight_hr;
-/*What ways are there to group the data values that don’t exist yet (using CASE)?*/
+
+--- What ways are there to group the data values that don’t exist yet (using CASE)?---
 select name, count(Space_Flight_hr) as space_HOURS,
     case
         when Space_Flight_hr > 1000 then 'Senior Spacewalker'
@@ -24,9 +36,9 @@ select name, count(Space_Flight_hr) as space_HOURS,
         else 'Novice Spacewalker'
     end as Space_Rank
 from astronauts
-group by Space_Rank;
+group by name, Space_Rank;
 
-/*What interesting ways are there to filter the data (using AND/OR)?*/
+--- What interesting ways are there to filter the data (using AND/OR)?---
 select name, Graduate_Major, Military_Rank 
 from astronauts
 where Graduate_Major = 'Mechanical Engineering' and (Military_Rank = 'Colonel' or Military_Rank = 'Major');
