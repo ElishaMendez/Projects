@@ -1,0 +1,95 @@
+-- ------------------------------------------------------------
+-- Famous People SQL Project
+-- Sample data values provided with assistance from ChatGPT
+-- Author: Elisha Mendez
+-- Date: 2025-12-06
+-- ------------------------------------------------------------
+
+Create Table famous_people (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT,
+    category TEXT
+    );
+    
+
+INSERT INTO famous_people (name, category) VALUES ("Tom Hanks", "Actor");
+INSERT INTO famous_people (name, category) VALUES ("Emma Watson", "Actor");
+INSERT INTO famous_people (name, category) VALUES ("Will Smith", "Actor");
+INSERT INTO famous_people (name, category) VALUES ("Adele", "Singer");
+INSERT INTO famous_people (name, category) VALUES ("Keanu Reeves", "Actor");
+INSERT INTO famous_people (name, category) VALUES ("Scarlett Johansson", "Actor");
+INSERT INTO famous_people (name, category) VALUES ("Brad Pitt", "Actor");
+INSERT INTO famous_people (name, category) VALUES ("Angelina Jolie", "Actor");
+INSERT INTO famous_people (name, category) VALUES ("Beyonce", "Singer");
+INSERT INTO famous_people (name, category) VALUES ("Chris Hemsworth", "Actor");
+INSERT INTO famous_people (name, category) VALUES ("Jennifer Lawrence", "Actor");
+INSERT INTO famous_people (name, category) VALUES ("Taylor Swift", "Singer");
+INSERT INTO famous_people (name, category) VALUES ("Leonardo DiCaprio", "Actor");
+INSERT INTO famous_people (name, category) VALUES ("Gal Gadot", "Actor");
+INSERT INTO famous_people (name, category) VALUES ("Ed Sheeran", "Singer");
+    
+Create Table movies (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title TEXT,
+    Released INTEGER
+    );
+
+INSERT INTO movies (title, released) VALUES ("Forrest Gump", 1994);
+INSERT INTO movies (title, released) VALUES ("Harry Potter and the Sorcerer's Stone", 2001);
+INSERT INTO movies (title, released) VALUES ("The Matrix", 1999);
+INSERT INTO movies (title, released) VALUES ("John Wick", 2014);
+INSERT INTO movies (title, released) VALUES ("Lost in Translation", 2003);
+INSERT INTO movies (title, released) VALUES ("Titanic", 1997);
+INSERT INTO movies (title, released) VALUES ("Wonder Woman", 2017);
+INSERT INTO movies (title, released) VALUES ("The Hunger Games", 2012);
+INSERT INTO movies (title, released) VALUES ("Avengers: Endgame", 2019);
+INSERT INTO movies (title, released) VALUES ("Crazy Rich Asians", 2018);
+
+Create Table marriage (
+    person1_id INTEGER,
+    person2_id INTEGER
+    );
+
+INSERT INTO marriage (person1_id, person2_id) VALUES (1, 4);
+INSERT INTO marriage (person1_id, person2_id) VALUES (5, 6);
+INSERT INTO marriage (person1_id, person2_id) VALUES (7, 8);
+INSERT INTO marriage (person1_id, person2_id) VALUES (9, 12);
+INSERT INTO marriage (person1_id, person2_id) VALUES (10, 11);
+INSERT INTO marriage (person1_id, person2_id) VALUES (13, 14);
+    
+CREATE TABLE movie_cast (
+    person_id INTEGER,
+    movie_id INTEGER
+    );
+
+INSERT INTO movie_cast (person_id, movie_id) VALUES (1, 1);
+INSERT INTO movie_cast (person_id, movie_id) VALUES (2, 2);
+INSERT INTO movie_cast (person_id, movie_id) VALUES (5, 3);
+INSERT INTO movie_cast (person_id, movie_id) VALUES (5, 4);
+INSERT INTO movie_cast (person_id, movie_id) VALUES (6, 5);
+INSERT INTO movie_cast (person_id, movie_id) VALUES (3, 1);
+INSERT INTO movie_cast (person_id, movie_id) VALUES (7, 6);
+INSERT INTO movie_cast (person_id, movie_id) VALUES (8, 6);
+INSERT INTO movie_cast (person_id, movie_id) VALUES (12, 8);
+INSERT INTO movie_cast (person_id, movie_id) VALUES (10, 9);
+INSERT INTO movie_cast (person_id, movie_id) VALUES (11, 8);
+INSERT INTO movie_cast (person_id, movie_id) VALUES (13, 6);
+INSERT INTO movie_cast (person_id, movie_id) VALUES (14, 7);
+INSERT INTO movie_cast (person_id, movie_id) VALUES (15, 10);
+INSERT INTO movie_cast (person_id, movie_id) VALUES (9, 10);
+
+-- Who they're married too
+SELECT a.name, b.name FROM marriage
+JOIN famous_people a
+ON marriage.person1_id = a.id
+JOIN famous_people b
+ON marriage.person2_id = b.id;
+
+-- What movies are they in?
+SELECT famous_people.name, movies.title FROM movie_cast
+JOIN famous_people
+ON movie_cast.person_id = famous_people.id
+JOIN movies
+ON movie_cast.movie_id = movies.id;
+
+    
