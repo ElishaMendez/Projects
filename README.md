@@ -1,6 +1,4 @@
-📂 SQL Projects Portfolio
-📌 Overview
-
+### Data Analyst Portfolio Project Repository
 This repository contains multiple SQL projects designed to practice database creation, data manipulation, and analysis. 
 Each project demonstrates skills in creating tables, inserting real-world data, and running queries that summarize, filter, 
 or organize information.
