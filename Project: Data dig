@@ -5,13 +5,31 @@ Technologies Used
 SQL
 
 ## Features
+- Summary Statistics (AVG, MAX, MIN)
+I calculated the average, maximum, and minimum spaceflight hours to understand the overall experience range of astronauts.
 
+- Grouped Insights Using GROUP BY + HAVING
+I grouped astronauts by their graduate major and used HAVING to filter groups based on average flight hours. This highlights which academic backgrounds tend to have lower or higher flight experience.
+
+- Custom Categories Using CASE
+I created a new variable (Space_Rank) that classifies astronauts into custom skill levels—Novice, Junior, Spacewalker, and Senior Spacewalker—based on total flight hours.
+
+- Multi-Condition Filtering Using AND/OR
+I practiced more complex filtering by selecting astronauts with specific engineering degrees and military ranks.
 
 ## What I Learned
-
+- How to summarize large datasets using aggregate functions
+- The difference between WHERE and HAVING
+- How to build new categories using conditional logic with CASE
+- How to cleanly structure SQL queries for readability
+- How grouping and filtering help uncover meaningful patterns in a dataset
 
 ## How It Can Be Improved
-
+- Add window functions to rank astronauts by flight hours
+- Visualize the results in Power BI or Excel dashboards
+- Export the cleaned dataset and do further modeling in Python
+- Expand the analysis to look at gender, birthplaces, or mission outcomes
+- Create stored procedures to automate repetitive queries
 
 SQL Code
 --- What are average, max, and min values in the data?---
