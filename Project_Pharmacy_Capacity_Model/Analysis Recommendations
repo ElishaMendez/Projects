@@ -1,36 +1,34 @@
 ##Top 4 Recommendations
 Based on the capacity model analysis, here are my highest priority suggestions:
+
 1. Validate the Model Against Reality
+- Compared actual daily output to the model's 3,957.5 orders/day projection
+- If we track this for 2-4 weeks to see if we're consistently above, below, or hitting target
+- If there's a gap, document why (order complexity, system downtime, supply issues, etc.)
+- This tells us if the model is useful or needs updating
 
-Compare actual daily output to the model's 3,957.5 orders/day projection
-Track this for 2-4 weeks to see if we're consistently above, below, or hitting target
-If there's a gap, document why (order complexity, system downtime, supply issues, etc.)
-This tells us if the model is useful or needs updating
-
+If so,
 2. Build a Tracking System
-
-Set up a simple daily tracker: Model Projection vs. Actual Output
-When actual is significantly different, document the reason
-This creates data to either validate the model or identify consistent problem areas
-Over time, shows us where we have capacity issues vs. where the model is just wrong
+- Set up a simple daily tracker: Model Projection vs. Actual Output
+- When actual is significantly different, document the reason
+- This creates data to either validate the model or identify consistent problem areas
+- Over time, shows us where we have capacity issues vs. where the model maybe ineffective
 
 3. Investigate the Performance Gap
+- The model assumes top performers produce 50% more than lower performers (600 vs 300 orders/shift)
+- Need to figure out if this is:
+    1. Experience/skill-based → training opportunity
+    2. Task assignment-based → they're getting different types of orders
+    3. Realistic long-term → or are high performers burning out?
+- Could close a big chunk of the capacity gap if we can bring lower performers up
+- Could reinforce training on a daily, weekly, monthly bases
+- Designated Lead Techs specifically for training purposes and guiding workflow
 
-The model assumes top performers produce 50% more than lower performers (600 vs 300 orders/shift)
-Need to figure out if this is:
-
-Experience/skill-based → training opportunity
-Task assignment-based → they're getting different types of orders
-Realistic long-term → or are high performers burning out?
-
-
-Could close a big chunk of the capacity gap if we can bring lower performers up
-
+If so,
 4. Optimize Morning Task Allocation
-
-Model shows all 10 techs start on "Fill" at 8:30 AM
-Data suggests 1,874 orders done by 11 AM but only 652 more by 1 PM
-Question: Are we overstaffing Fill in the morning while creating bottlenecks in Packing/Shipping later?
-Maybe stagger task assignments earlier in the day?
+- Model shows all 10 techs start on "Fill" at 8:30 AM
+- Data suggests 1,874 orders done by 11 AM but only 652 more by 1 PM because of lunches
+- Can potentially start earlier in the day
+- Set a capacity of daily output (i.e. 2,000 orders in a day)
 
 Quick win: Start with #1 and #2 since they're just data collection - they'll tell us if recommendations #3 and #4 are even worth pursuing.
