@@ -1,4 +1,4 @@
-Top 4 Recommendations for the Director
+##Top 4 Recommendations
 Based on the capacity model analysis, here are my highest priority suggestions:
 1. Validate the Model Against Reality
 
@@ -7,9 +7,16 @@ Track this for 2-4 weeks to see if we're consistently above, below, or hitting t
 If there's a gap, document why (order complexity, system downtime, supply issues, etc.)
 This tells us if the model is useful or needs updating
 
-2. Investigate the Performance Gap
+2. Build a Tracking System
 
-The model assumes Jennifer & Eli produce 50% more than Elena & Teamiller (600 vs 300 orders/shift)
+Set up a simple daily tracker: Model Projection vs. Actual Output
+When actual is significantly different, document the reason
+This creates data to either validate the model or identify consistent problem areas
+Over time, shows us where we have capacity issues vs. where the model is just wrong
+
+3. Investigate the Performance Gap
+
+The model assumes top performers produce 50% more than lower performers (600 vs 300 orders/shift)
 Need to figure out if this is:
 
 Experience/skill-based → training opportunity
@@ -19,18 +26,11 @@ Realistic long-term → or are high performers burning out?
 
 Could close a big chunk of the capacity gap if we can bring lower performers up
 
-3. Optimize Morning Task Allocation
+4. Optimize Morning Task Allocation
 
 Model shows all 10 techs start on "Fill" at 8:30 AM
 Data suggests 1,874 orders done by 11 AM but only 652 more by 1 PM
 Question: Are we overstaffing Fill in the morning while creating bottlenecks in Packing/Shipping later?
 Maybe stagger task assignments earlier in the day?
 
-4. Build a Tracking System
-
-Set up a simple daily tracker: Model Projection vs. Actual Output
-When actual is significantly different, document the reason
-This creates data to either validate the model or identify consistent problem areas
-Over time, shows us where we have capacity issues vs. where the model is just wrong
-
-Quick win: Start with #1 and #4 since they're just data collection - they'll tell us if recommendations #2 and #3 are even worth pursuing.
+Quick win: Start with #1 and #2 since they're just data collection - they'll tell us if recommendations #3 and #4 are even worth pursuing.
